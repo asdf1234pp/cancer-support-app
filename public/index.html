@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SEMICOLON - Demo ver.</title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+  <!-- Navigation Bar -->
+  <nav>
+    <div class="container nav-flex">
+      <div class="logo">SEMICOLON</div>
+      <ul class="nav-menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#" id="login-btn">Login</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="container hero-content">
+      <h1>Welcome to SEMICOLON</h1>
+      <p>내용 <br>내용</p>
+      <a href="#services" class="cta-btn">Get Started</a>
+    </div>
+  </section>
+
+
+  <section id="profile-section" style="display:none;">
+    <div class="profile-card">
+      <h2><span class="profile-icon">👤</span> My Profile<br>(Exposed Information)</h2>
+      <form id="profile-form">
+        <label>
+          <span>Name</span>
+          <input name="name" placeholder="Your name" required>
+        </label>
+        <label>
+          <span>Cancer Type</span>
+          <input name="cancerType" placeholder="ex: Stomach, Breast, ..." required>
+        </label>
+        <label>
+          <span>Contact</span>
+          <input name="contact" placeholder="Email or phone" required>
+        </label>
+        <label>
+          <span>Short Bio</span>
+          <input name="detail" placeholder="Introduce yourself" required>
+        </label>
+        <button type="submit">💾 Save</button>
+        <div id="profile-msg"></div>
+      </form>
+    </div>
+  </section>
+
+
+  <!-- Services Section -->
+  <section class="services" id="services">
+    <div class="container">
+      <h2>Our Services</h2>
+      <div class="cards">
+        <a href="exercise.html" class="card-link">
+          <div class="card">
+            <div class="card-icon">💡</div>
+            <h3>운동</h3>
+            <p>암환자 맞춤 운동 팁 및 정보 보기</p>
+          </div>
+        </a>
+        <a href="diet.html" class="card-link">
+          <div class="card">
+            <div class="card-icon">⚡</div>
+            <h3>식단</h3>
+            <p>암 종류별 식단 추천 보기</p>
+          </div>
+        </a>
+        <a href="#profile-section" class="card-link">
+          <div class="card">
+            <div class="card-icon">🎨</div>
+            <h3>직업(개인용)</h3>
+            <p>프로필 정보 등록 및 수정</p>
+          </div>
+        </a>
+        <a href="company.html" class="card-link">
+          <div class="card">
+            <div class="card-icon">🌐</div>
+            <h3>기업 서비스 전환</h3>
+            <p>기업회원 전용 매칭 서비스</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about" id="about">
+    <div class="container">
+      <h2>About Us</h2>
+      <p>
+        SEMICOLON is a modern website prototype inspired by the best practices of Webflow.<br>
+        Built for rapid iteration, flexible customization, and showcasing your ideas beautifully.
+      </p>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <h2>Contact</h2>
+      <form class="contact-form">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea rows="4" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-flex">
+      <div>© 2025 SEMICOLON. All rights reserved.</div>
+      <div>
+        <a href="#">Instagram</a> | <a href="#">Twitter</a> | <a href="#">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+<!-- 로그인/회원가입 모달을 아래처럼 넣어주세요 -->
+<div id="modal-bg" style="display:none;">
+  <div class="modal">
+    <div class="modal-tabs">
+      <button id="show-login" class="active">Login</button>
+      <button id="show-register">Sign up</button>
+    </div>
+    <form id="login-form" style="display:block;">
+      <h3>Login</h3>
+      <input name="username" placeholder="Username" required>
+      <input type="password" name="password" placeholder="Password" required>
+      <button type="submit">Login</button>
+    </form>
+    <form id="register-form" style="display:none;">
+      <h3>Sign up</h3>
+      <input name="username" placeholder="Username" required>
+      <input type="password" name="password" placeholder="Password" required>
+      <input name="name" placeholder="Name" required>
+      <input name="cancerType" placeholder="Cancer Type" required>
+      <input name="contact" placeholder="Contact (Email/Phone)" required>
+      <input name="detail" placeholder="Short Bio" required>
+      <button type="submit">Sign up</button>
+    </form>
+    <div id="modal-msg"></div>
+    <button id="modal-close" class="modal-close">×</button>
+  </div>
+</div>
+
+<script>
+const modalBg = document.getElementById('modal-bg');
+document.getElementById('login-btn').onclick = () => modalBg.style.display = 'block';
+document.getElementById('modal-close').onclick = () => modalBg.style.display = 'none';
+document.getElementById('show-login').onclick = () => {
+  document.getElementById('login-form').style.display = 'block';
+  document.getElementById('register-form').style.display = 'none';
+  document.getElementById('show-login').classList.add('active');
+  document.getElementById('show-register').classList.remove('active');
+};
+document.getElementById('show-register').onclick = () => {
+  document.getElementById('login-form').style.display = 'none';
+  document.getElementById('register-form').style.display = 'block';
+  document.getElementById('show-register').classList.add('active');
+  document.getElementById('show-login').classList.remove('active');
+};
+document.getElementById('modal-bg').onclick = (e) => {
+  if (e.target === modalBg) modalBg.style.display = 'none';
+};
+// 회원가입
+document.getElementById('register-form').onsubmit = async (e) => {
+  e.preventDefault();
+  const data = Object.fromEntries(new FormData(e.target));
+  const res = await fetch('/api/register', {
+    method: 'POST',
+    headers: {'Content-Type':'application/json'},
+    body: JSON.stringify(data)
+  });
+  const msg = await res.json();
+  document.getElementById('modal-msg').innerText = msg.success ? 'Sign up complete!' : 'Error: ' + msg.error;
+  
+  if (msg.success) {
+    setTimeout(() => {
+      document.getElementById('modal-bg').style.display = 'none';
+      document.getElementById('modal-msg').innerText = '';
+      // 폼 초기화 (원하면 추가)
+      document.getElementById('register-form').reset();
+    }, 1500);
+  }
+};
+
+// 로그인
+document.getElementById('login-form').onsubmit = async (e) => {
+  e.preventDefault();
+  const data = Object.fromEntries(new FormData(e.target));
+  const res = await fetch('/api/login', {
+    method: 'POST',
+    headers: {'Content-Type':'application/json'},
+    body: JSON.stringify(data)
+  });
+  const msg = await res.json();
+  if (msg.success) {
+    document.getElementById('modal-msg').innerText = 'Login successful!';
+    setTimeout(() => { window.location.reload(); }, 800);
+  } else {
+    document.getElementById('modal-msg').innerText = 'Error: ' + (msg.error || 'Login failed');
+  }
+};
+
+let loggedInUsername = null;
+
+// 로그인 성공 시 세팅
+document.getElementById('login-form').onsubmit = async (e) => {
+  e.preventDefault();
+  const data = Object.fromEntries(new FormData(e.target));
+  const res = await fetch('/api/login', {
+    method: 'POST',
+    headers: {'Content-Type':'application/json'},
+    body: JSON.stringify(data)
+  });
+  const msg = await res.json();
+  if (msg.success) {
+    document.getElementById('modal-msg').innerText = 'Login successful!';
+    setTimeout(() => {
+      document.getElementById('modal-bg').style.display = 'none';
+      document.getElementById('modal-msg').innerText = '';
+      loggedInUsername = data.username;
+      showProfileSection(loggedInUsername);
+    }, 800);
+  } else {
+    document.getElementById('modal-msg').innerText = 'Error: ' + (msg.error || 'Login failed');
+  }
+};
+
+// 내 정보 폼 표시/기존 정보 채우기
+function showProfileSection(username) {
+  document.getElementById('profile-section').style.display = '';
+  fetch('/api/me?username=' + encodeURIComponent(username))
+    .then(r => r.json())
+    .then(user => {
+      document.querySelector('#profile-form [name="name"]').value = user.name || '';
+      document.querySelector('#profile-form [name="cancerType"]').value = user.cancerType || '';
+      document.querySelector('#profile-form [name="contact"]').value = user.contact || '';
+      document.querySelector('#profile-form [name="detail"]').value = user.detail || '';
+    });
+}
+
+// 내 정보 저장(수정/저장)
+document.getElementById('profile-form').onsubmit = async (e) => {
+  e.preventDefault();
+  if (!loggedInUsername) {
+    document.getElementById('profile-msg').innerText = 'Login first!';
+    return;
+  }
+  const data = Object.fromEntries(new FormData(e.target));
+  const res = await fetch('/api/profile', {
+    method: 'POST',
+    headers: {'Content-Type':'application/json'},
+    body: JSON.stringify({
+      username: loggedInUsername,
+      profile: data
+    })
+  });
+  const msg = await res.json();
+  document.getElementById('profile-msg').innerText = msg.success ? 'Saved!' : 'Error: ' + msg.error;
+  if (msg.success) setTimeout(() => document.getElementById('profile-msg').innerText = '', 1200);
+};
+
+</script>
+
+</body>
+</html>

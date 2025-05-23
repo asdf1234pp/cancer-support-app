@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>기업회원 암환우 리스트 | SEMICOLON</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page-wrapper">
+  <nav>
+    <div class="container nav-flex">
+      <div class="logo">SEMICOLON</div>
+      <ul class="nav-menu">
+        <li><a href="index.html#home">Home</a></li>
+        <li><a href="index.html#services">Services</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+        <li><a href="index.html" id="login-btn">Login</a></li>
+      </ul>
+    </div>
+  </nav>
+  <section class="company-login-section" id="company-login-section">
+    <div class="profile-card">
+      <h2>기업회원 로그인</h2>
+      <form id="company-login-form">
+        <label>
+          <span>아이디</span>
+          <input name="username" required>
+        </label>
+        <label>
+          <span>비밀번호</span>
+          <input name="password" type="password" required>
+        </label>
+        <button type="submit">로그인</button>
+        <div id="company-login-msg"></div>
+      </form>
+    </div>
+  </section>
+  <section id="userlist-section" style="display:none;">
+    <div class="container">
+      <h2 style="color:var(--main);margin-bottom:16px;">암 환우 리스트</h2>
+      <div class="userlist-controls">
+        <input type="text" id="userlist-search" placeholder="이름, 암종, 연락처, 소개 등 검색">
+        <select id="userlist-filter">
+          <option value="">전체 암종</option>
+          <option value="유방암">유방암</option>
+          <option value="위암">위암</option>
+          <option value="폐암">폐암</option>
+          <option value="대장암">대장암</option>
+          <option value="전립선암">전립선암</option>
+        <!-- 필요시 암종 추가 -->
+        </select>
+      </div>
+      <div id="user-cards" class="user-cards-grid"></div>
+    </div>
+  </section>
+
+
+  <footer>
+    <div class="container footer-flex">
+        <div>© 2025 SEMICOLON. All rights reserved.</div>
+        <div>
+            <a href="#">Instagram</a> | <a href="#">Twitter</a> | <a href="#">GitHub</a>
+        </div>
+    </div>
+  </footer>
+  <script>
+
+// 기업 로그인
+document.getElementById('company-login-form').onsubmit = async (e) => {
+  e.preventDefault();
+  const data = Object.fromEntries(new FormData(e.target));
+  const res = await fetch('/api/company-login', {
+    method: 'POST',
+    headers: {'Content-Type':'application/json'},
+    body: JSON.stringify(data)
+  });
+  const msg = await res.json();
+  if (msg.success) {
+    document.getElementById('company-login-section').style.display = 'none';
+    document.getElementById('userlist-section').style.display = '';
+    loadUserList();
+  } else {
+    document.getElementById('company-login-msg').innerText = msg.error || '로그인 실패';
+  }
+};
+
+// 환우 리스트 불러오기/검색/필터
+let allUsers = [];
+async function loadUserList() {
+  const res = await fetch('/api/userlist');
+  allUsers = await res.json();
+  renderUserCards(allUsers);
+}
+function renderUserCards(users) {
+  const box = document.getElementById('user-cards');
+  if (!users.length) {
+    box.innerHTML = `<div style="color:#888;text-align:center;padding:48px;">검색 결과가 없습니다.</div>`;
+    return;
+  }
+  box.innerHTML = users.map(u => `
+    <div class="user-card">
+      <div class="uc-title">${u.name}</div>
+      <div class="uc-type">암종: ${u.cancerType}</div>
+      <div class="uc-contact">연락처: ${u.contact}</div>
+      <div class="uc-detail">${u.detail}</div>
+    </div>
+  `).join('');
+}
+// 검색 + 필터 연동
+function updateFilter() {
+  const q = document.getElementById('userlist-search').value.trim().toLowerCase();
+  const type = document.getElementById('userlist-filter').value;
+  let filtered = allUsers;
+  if (type) filtered = filtered.filter(u => (u.cancerType||'').toLowerCase() === type.toLowerCase());
+  if (q) filtered = filtered.filter(u =>
+    Object.values(u).some(v => String(v).toLowerCase().includes(q))
+  );
+  renderUserCards(filtered);
+}
+document.getElementById('userlist-search').oninput = updateFilter;
+document.getElementById('userlist-filter').onchange = updateFilter;
+  </script>
+  </div>
+</body>
+</html>

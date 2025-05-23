@@ -1,0 +1,12 @@
+[
+  {
+    "username": "test",
+    "password": "test",
+    "profile": {
+      "name": "test name1",
+      "cancerType": "test cancer tpye1",
+      "contact": "010 1",
+      "detail": "testing bio1"
+    }
+  }
+]
