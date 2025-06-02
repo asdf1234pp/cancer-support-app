@@ -13,7 +13,6 @@
       <ul class="nav-menu">
         <li><a href="#home">Home</a></li>
         <li><a href="#services">Services</a></li>
-        <li><a href="#about">About</a></li>
         <li><a href="#contact">Contact</a></li>
         <li><a href="#" id="login-btn">Login</a></li>
       </ul>
@@ -94,17 +93,6 @@
     </div>
   </section>
 
-  <!-- About Section -->
-  <section class="about" id="about">
-    <div class="container">
-      <h2>About Us</h2>
-      <p>
-        SEMICOLON is a modern website prototype inspired by the best practices of Webflow.<br>
-        Built for rapid iteration, flexible customization, and showcasing your ideas beautifully.
-      </p>
-    </div>
-  </section>
-
   <!-- Contact Section -->
   <section class="contact" id="contact">
     <div class="container">
@@ -128,7 +116,6 @@
     </div>
   </footer>
 
-<!-- 로그인/회원가입 모달을 아래처럼 넣어주세요 -->
 <div id="modal-bg" style="display:none;">
   <div class="modal">
     <div class="modal-tabs">
@@ -191,7 +178,6 @@ document.getElementById('register-form').onsubmit = async (e) => {
     setTimeout(() => {
       document.getElementById('modal-bg').style.display = 'none';
       document.getElementById('modal-msg').innerText = '';
-      // 폼 초기화 (원하면 추가)
       document.getElementById('register-form').reset();
     }, 1500);
   }

@@ -6,43 +6,38 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="page-wrapper">
   <nav>
     <div class="container nav-flex">
       <div class="logo">SEMICOLON</div>
       <ul class="nav-menu">
         <li><a href="index.html#home">Home</a></li>
         <li><a href="index.html#services">Services</a></li>
-        <li><a href="index.html#about">About</a></li>
         <li><a href="index.html#contact">Contact</a></li>
         <li><a href="index.html" id="login-btn">Login</a></li>
       </ul>
     </div>
   </nav>
-
-  <section class="detail-hero">
-    <div class="container">
-      <h1>암환자를 위한 맞춤 운동법</h1>
-      <p>암 종류별로 추천하는 운동 방법과 실전 팁을 안내합니다.</p>
-    </div>
-  </section>
-  <section class="detail-content">
-    <div class="container">
-      <h2>유방암 환자 운동</h2>
-      <ul>
-        <li>가벼운 유산소(걷기, 수영 등)</li>
-        <li>근력 운동(가볍게 시작 → 점진적 증가)</li>
-        <li>과도한 무게/격한 운동은 피하기</li>
-      </ul>
-      <h2>위암 환자 운동</h2>
-      <ul>
-        <li>가벼운 스트레칭, 걷기</li>
-        <li>소화 상태에 따라 운동량 조절</li>
-      </ul>
-      <!-- 다른 암종도 추가 가능 -->
-      <h2>참고 자료</h2>
-      <a href="https://www.cancer.go.kr" target="_blank">국가암정보센터 운동 정보</a>
-    </div>
-  </section>
+  <main>
+    <section class="diet-select-hero">
+      <div class="container">
+        <h1>암 종류별 운동 루틴 보기</h1>
+        <p>암 종류를 선택하세요</p>
+        <div class="cancer-type-btns">
+          <button onclick="location.href='exercise-colon.html'">대장암</button>
+          <button onclick="location.href='exercise-stomach.html'">위암</button>
+          <button onclick="location.href='exercise-pancreas.html'">췌장암</button>
+          <button onclick="location.href='exercise-kidney.html'">신장암</button>
+          <button onclick="location.href='exercise-liver.html'">간암</button>
+          <button onclick="location.href='exercise-lung.html'">폐암</button>
+          <button onclick="location.href='exercise-rectum.html'">직장암</button>
+          <button onclick="location.href='exercise-thyroid.html'">갑상선암</button>
+          <button onclick="location.href='exercise-breast.html'">유방암</button>
+          <button onclick="location.href='exercise-gallbladder.html'">담낭암</button>
+        </div>
+      </div>
+    </section>
+  </main>
   <footer>
     <div class="container footer-flex">
         <div>© 2025 SEMICOLON. All rights reserved.</div>
@@ -51,6 +46,6 @@
         </div>
     </div>
   </footer>
-
+  </div>
 </body>
 </html>

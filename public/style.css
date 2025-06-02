@@ -608,3 +608,200 @@ main, .main-content, #userlist-section, .company-login-section {
 footer {
   flex-shrink: 0;
 }
+.diet-select-hero {
+  background: linear-gradient(110deg, var(--main) 70%, var(--accent) 100%);
+  color: #fff;
+  padding: 80px 0 40px 0;
+  text-align: center;
+}
+.cancer-type-btns {
+  margin: 44px auto 0 auto;
+  max-width: 700px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 17px;
+  justify-content: center;
+}
+.cancer-type-btns button {
+  background: #fff;
+  color: var(--main);
+  border: none;
+  border-radius: 13px;
+  padding: 16px 36px;
+  font-weight: bold;
+  font-size: 1.12em;
+  box-shadow: 0 3px 16px #2f80ed22;
+  cursor: pointer;
+  transition: background 0.14s, color 0.14s, transform 0.12s;
+}
+.cancer-type-btns button:hover {
+  background: var(--accent);
+  color: #fff;
+  transform: translateY(-3px) scale(1.05);
+}
+
+/* 상세페이지 레이아웃 */
+.diet-detail-hero {
+  background: linear-gradient(100deg, var(--main) 75%, var(--accent) 100%);
+  color: #fff;
+  padding: 56px 0 16px 0;
+  text-align: center;
+}
+.diet-detail-hero h1 {
+  font-size: 2em;
+}
+.diet-detail-hero .back-btn {
+  display: inline-block;
+  color: #fff;
+  background: #2f80ed66;
+  padding: 8px 22px;
+  border-radius: 7px;
+  text-decoration: none;
+  margin-top: 18px;
+  font-size: 1em;
+  transition: background 0.12s;
+}
+.diet-detail-hero .back-btn:hover {
+  background: #fff;
+  color: var(--main);
+}
+
+.diet-detail-content {
+  background: var(--bg);
+  padding: 46px 0 36px 0;
+}
+.diet-detail-grid {
+  display: grid;
+  grid-template-columns: 2.1fr 1.1fr;
+  gap: 34px;
+  align-items: flex-start;
+  max-width: 950px;
+  margin: 0 auto;
+}
+.diet-meal-cards {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.diet-meal-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px #2f80ed22;
+  padding: 22px 18px 18px 18px;
+  flex: 1 1 160px;
+  min-width: 170px;
+  max-width: 230px;
+}
+.diet-meal-card h2 {
+  color: var(--main);
+  font-size: 1.11em;
+  margin-bottom: 12px;
+  margin-top: 0;
+}
+.diet-meal-card ul {
+  margin: 0;
+  padding-left: 17px;
+  color: #345;
+  font-size: 1em;
+}
+
+.diet-avoid-list {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px #2f80ed22;
+  padding: 26px 20px 18px 20px;
+}
+.diet-avoid-list h2 {
+  color: #e74c3c;
+  font-size: 1.11em;
+  margin-bottom: 13px;
+}
+.diet-avoid-list ul {
+  margin: 0;
+  padding-left: 17px;
+  color: #b32b2b;
+  font-size: 1em;
+}
+
+@media (max-width: 950px) {
+  .diet-detail-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .diet-meal-cards {
+    justify-content: center;
+  }
+}
+html, body {
+  height: 100%;
+}
+
+.page-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+footer {
+  flex-shrink: 0;
+}
+.diet-detail-content-vertical {
+  background: var(--bg);
+  padding: 46px 0 46px 0;
+}
+.diet-meal-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  max-width: 510px;
+  margin: 0 auto 40px auto;
+}
+.diet-meal-card-vertical {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px #2f80ed22;
+  padding: 2px 100px 22px 100px;
+  margin: 5px;
+}
+.diet-meal-card-vertical h2 {
+  color: var(--main);
+  font-size: 1.8em;
+  margin-bottom: 13px;
+}
+.diet-meal-card-vertical ul {
+  margin: 0;
+  padding-left: 17px;
+  color: #345;
+  font-size: 1em;
+}
+.diet-avoid-list-vertical {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px #ff000022;
+  padding: 34px 32px 22px 32px;
+  max-width: 670px;
+  margin: 0 auto;
+}
+.diet-avoid-list-vertical h2 {
+  color: #e74c3c;
+  font-size: 1.13em;
+  margin-bottom: 17px;
+}
+.diet-avoid-list-vertical ul {
+  margin: 0;
+  padding-left: 17px;
+  color: #b32b2b;
+  font-size: 1em;
+}
+
+@media (max-width: 700px) {
+  .diet-meal-vertical, .diet-avoid-list-vertical {
+    max-width: 99vw;
+    padding-left: 2vw;
+    padding-right: 2vw;
+  }
+}

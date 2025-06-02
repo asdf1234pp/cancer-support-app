@@ -45,15 +45,12 @@ app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });
 
-// 기존 코드 위에 아래 엔드포인트 추가
-
 // 내 정보 읽기
 app.get('/api/me', (req, res) => {
   const { username } = req.query;
   const users = readUsers();
   const user = users.find(u => u.username === username);
   if (!user) return res.status(404).json({ error: "User not found" });
-  // 프로필만 반환
   res.json(user.profile || {});
 });
 
@@ -80,10 +77,9 @@ app.post('/api/company-login', (req, res) => {
   res.json({ success: true, company: user.company });
 });
 
-// 암환우 리스트(프로필만, 민감정보 제외)
+// 암환우 리스트
 app.get('/api/userlist', (req, res) => {
   const users = readUsers();
-  // profile, username만 반환
   const list = users.map(u => ({
     username: u.username,
     ...u.profile
