@@ -74,6 +74,7 @@ nav {
 }
 .hero-content p {
   font-size: 1.25em;
+  font-weight: bold;
   margin-bottom: 30px;
   opacity: 0.92;
 }
