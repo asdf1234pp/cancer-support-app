@@ -3,10 +3,10 @@
     "username": "test1",
     "password": "test1",
     "profile": {
-      "name": "tester1",
+      "name": "김하린",
       "cancerType": "대장암",
       "contact": "tester1contact@gmail.com",
-      "detail": "testing bio1"
+      "detail": "10년간 대형 제약사 임상시험 코디네이터로 근무했습니다. 유방암 치료 후 복귀를 준비하며 GCP·데이터 관리 역량을 살려 원격 품질관리 직무를 찾고 있습니다."
     }
   },
 
@@ -14,10 +14,10 @@
     "username": "test2",
     "password": "test2",
     "profile": {
-      "name": "tester2",
+      "name": "이도윤윤",
       "cancerType": "위암",
       "contact": "tester2contact@gmail.com",
-      "detail": "testing bio2"
+      "detail": "중견 IT기업에서 7년간 HR 제너럴리스트로 일했습니다. 백혈병 완치 뒤 재취업을 목표로 화상 채용 운영·HR 애널리틱스 경험을 기업에 제공하고자 합니다."
     }
   },
 
@@ -25,10 +25,10 @@
     "username": "test3",
     "password": "test3",
     "profile": {
-      "name": "tester3",
+      "name": "박소연",
       "cancerType": "췌장암",
       "contact": "tester3contact@gmail.com",
-      "detail": "testing bio3"
+      "detail": "광고대행사에서 6년간 그래픽 디자이너로 활동했습니다. 갑상선암 수술 후 업무 공백이 있지만, 적응형 장비로 UI·브랜딩 업무에 즉시 투입될 준비가 돼 있습니다."
     }
   },
 
@@ -36,10 +36,10 @@
     "username": "test4",
     "password": "test4",
     "profile": {
-      "name": "tester4",
+      "name": "정우진",
       "cancerType": "신장암",
       "contact": "tester4contact@gmail.com",
-      "detail": "testing bio4"
+      "detail": "핀테크 회사에서 8년간 풀스택 개발을 담당했습니다. 골육종 절단 치료를 마치고 React·Python 프로젝트 경험을 살려 원격 개발 포지션을 actively 구직 중입니다."
     }
   },
 
@@ -47,10 +47,10 @@
     "username": "test5",
     "password": "test5",
     "profile": {
-      "name": "tester5",
+      "name": "최가영",
       "cancerType": "간암",
       "contact": "tester5contact@gmail.com",
-      "detail": "testing bio5"
+      "detail": "9년차 종합병원 종양 전담 간호사였습니다. 대장암 회복기로 재직 공백이 생겼으나 EMR 검토·ICD-10 코딩 전문성을 바탕으로 재택 의료정보직을 희망합니다."
     }
   },
 
@@ -58,10 +58,10 @@
     "username": "test6",
     "password": "test6",
     "profile": {
-      "name": "tester6",
+      "name": "한서준",
       "cancerType": "폐암",
       "contact": "tester6contact@gmail.com",
-      "detail": "testing bio6"
+      "detail": "대기업 전자부품사에서 6년간 공급망 기획을 수행했습니다. 림프종 회복 후 SAP·Power BI 수요 예측 역량으로 SCM 컨설팅·분석직 취업을 준비하고 있습니다."
     }
   },
 
@@ -69,10 +69,10 @@
     "username": "test7",
     "password": "test7",
     "profile": {
-      "name": "tester7",
+      "name": "오지민",
       "cancerType": "유방암",
       "contact": "tester7contact@gmail.com",
-      "detail": "testing bio7"
+      "detail": "10년 경력 영-한 생명과학 기술 번역가입니다. 뇌종양 치료로 프로젝트를 잠시 중단했으나, 논문·특허 전문 번역과 QA 업무로 풀타임 복귀를 모색 중입니다."
     }
   },
 
@@ -80,10 +80,10 @@
     "username": "test8",
     "password": "test8",
     "profile": {
-      "name": "tester8",
+      "name": "윤세라",
       "cancerType": "담낭암",
       "contact": "tester8contact@gmail.com",
-      "detail": "testing bio8"
+      "detail": "이커머스 스타트업에서 5년간 디지털 마케팅을 총괄했습니다. 유방암-유발 림프부종 회복 중이며, SEO·SNS 광고 성과 개선 경험을 살려 재택 마케팅 직무를 찾고 있습니다."
     }
   }
 
